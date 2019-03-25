@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        tools:context=".SignupActivity">
+
+    <ImageView
+            android:id="@+id/logo"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/aa" />
+
+    <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="12dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:text="@string/sign_up"
+            android:textColor="#000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    <EditText
+            android:id="@+id/Name"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/signup"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:ems="15"
+            android:hint="@string/name"
+            android:inputType="text" />
+
+    <EditText
+            android:id="@+id/Email"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="15"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
+
+    <EditText
+            android:id="@+id/password"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/Email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="15"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+
+            />
+
+    <EditText
+            android:id="@+id/repassword"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="15"
+            android:hint="@string/retype_password"
+            android:inputType="textPassword" />
+
+    <EditText
+            android:id="@+id/Year"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/repassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:ems="15"
+            android:hint="@string/year"
+            android:inputType="text" />
+
+    <EditText
+        android:id="@+id/dep"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/Year"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="15"
+        android:hint="@string/department"
+        android:inputType="text"
+
+        />
+
+    <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dep"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/Doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="@string/doctor" />
+
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/student"
+
+                />
+
+    </RadioGroup>
+
+    <Button
+            android:id="@+id/submit"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dep"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/sign_up"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+
+</RelativeLayout>

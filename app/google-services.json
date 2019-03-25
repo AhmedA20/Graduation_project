@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "753866773351",
+    "firebase_url": "https://collegedb-d631a.firebaseio.com",
+    "project_id": "collegedb-d631a",
+    "storage_bucket": "collegedb-d631a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:753866773351:android:8749822457ba2fb5",
+        "android_client_info": {
+          "package_name": "com.fshu.ourgraduationproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "753866773351-61miarmogr098uhh974f3egqv384bgf8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fshu.ourgraduationproject",
+            "certificate_hash": "78e4d78f45d18658a27784fd8d17db9a9299829b"
+          }
+        },
+        {
+          "client_id": "753866773351-88al662vupn69qsoc5b39vfi3s0bcbmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdGc3S--30YQzX8mA_tCZwnr0R57ujYmg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "753866773351-88al662vupn69qsoc5b39vfi3s0bcbmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

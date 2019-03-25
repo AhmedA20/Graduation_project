@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageButton
+            android:id="@+id/subject"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/subject"
+            android:contentDescription="@string/todo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/subject"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            android:text="@string/subject"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+        <ImageButton
+            android:id="@+id/chat"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/chat"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chat"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="69dp"
+            android:padding="5dp"
+            android:text="@string/chat"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="normal"
+           />
+        <ImageButton
+            android:id="@+id/attendance"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/subject"
+            android:background="@drawable/att"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/attendance"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="0dp"
+            android:padding="5dp"
+            android:text="@string/attendance"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            />
+        <ImageButton
+            android:id="@+id/table"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/chat"
+            android:background="@drawable/table"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/table"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="62dp"
+            android:padding="5dp"
+            android:text="@string/table"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            />
+
+        <ImageButton
+            android:id="@+id/grade"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="350dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/grade"
+            android:contentDescription="@string/todo" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="73dp"
+            android:text="@string/grade"
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:textStyle="normal"
+            />
+
+
+</RelativeLayout>
