@@ -74,6 +74,12 @@ public class SignupActivity extends AppCompatActivity {
 
     }//end onCreate
 
+    @Override
+    public void onBackPressed() {
+        // disable going back to the MainActivity
+        moveTaskToBack(true);
+    }
+
 
 
     //signupUser
@@ -102,6 +108,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
                 });
     }//endCreateNewUser
+
 
     //User Credentials validation
     private boolean validate() {

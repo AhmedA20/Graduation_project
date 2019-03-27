@@ -52,6 +52,12 @@ public class SigninActivity extends AppCompatActivity {
         });
     }//end onCreate
 
+    @Override
+    public void onBackPressed() {
+        // disable going back to the MainActivity
+        moveTaskToBack(true);
+    }
+
     //signInUser
     private void signInWithEmailAndPassword(String mail, String pass){
         mAuth.createUserWithEmailAndPassword(email, password)//the main signUp method

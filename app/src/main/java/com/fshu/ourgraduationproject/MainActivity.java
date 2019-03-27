@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.signout:
                 mFirebaseAuth.signOut();
+                mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
                 mUsername = ANONYMOUS;
                 startActivity(new Intent(this, SigninActivity.class));
                 finish();
@@ -143,6 +144,13 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        // disable going back to the Signing Activity
+        moveTaskToBack(true);
     }
 
     /*//todo:inCase of (onActivity) method failure enable this set of method here and in maun activity xml file
