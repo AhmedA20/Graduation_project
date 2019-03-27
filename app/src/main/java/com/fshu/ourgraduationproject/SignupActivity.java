@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -15,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import java.util.jar.Attributes;
 
@@ -24,12 +27,14 @@ public class SignupActivity extends AppCompatActivity {
     private String email = null;
     private String password = null;
     private String rePassword =null;
+    private boolean student;
     private userInfo info;
     private FirebaseAuth mAuth;
     private FirebaseUser mFirebaseUser;
     private FirebaseAuth mFirebaseAuth;
     private final String TAG = "Sign Up";
     private Button submit;
+    private RadioGroup r2;
     private EditText name,mailView,passView,rePassView,year,dep,sub_dep;
 
 
@@ -41,15 +46,17 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_activity);
-        submit = findViewById(R.id.submit);
-        name = findViewById(R.id.Name);
-        mailView = findViewById(R.id.Email);
-        passView = findViewById(R.id.password);
-        rePassView = findViewById(R.id.repassword);
-        year = findViewById(R.id.Year);
-        dep = findViewById(R.id.dep);
-        sub_dep = findViewById(R.id.sub_dep);
 
+        //jus plain miss of objects
+        submit     = findViewById(R.id.submit);
+        name       = findViewById(R.id.Name);
+        mailView   = findViewById(R.id.Email);
+        passView   = findViewById(R.id.password);
+        rePassView = findViewById(R.id.repassword);
+        year       = findViewById(R.id.Year);
+        dep        = findViewById(R.id.dep);
+        sub_dep    = findViewById(R.id.sub_dep);
+        r2         = findViewById(R.id.rad);
 
         //authentication obj reference
         mAuth = FirebaseAuth.getInstance();
@@ -64,8 +71,8 @@ public class SignupActivity extends AppCompatActivity {
 
                 if(validate()){
                     createNewUser(email,password);
-                    mFirebaseAuth = FirebaseAuth.getInstance();
-                    mFirebaseUser = mFirebaseAuth.getCurrentUser();
+                    mFirebaseUser = mAuth.getCurrentUser();
+                    radioListener();
                     UpdateUserInfo();
                 }
             }
@@ -176,6 +183,15 @@ public class SignupActivity extends AppCompatActivity {
         return valid;
     }//end validation
 
+    //is the user student or professor
+    private void radioListener(){
+        int radioButtonID = r2.getCheckedRadioButtonId();
+        RadioButton std = findViewById(radioButtonID);
+        String selectedtext = std.getText().toString();
+
+        student = selectedtext.equals("Student")? true :false;
+    }
+
     private void UpdateUserInfo(){
         String name            = this.name.getText().toString();
         String year            = this.year.getText().toString();
@@ -186,7 +202,25 @@ public class SignupActivity extends AppCompatActivity {
         info.setDepartment(department);
         info.setSubDepartment(subDepartment);
         info.setYear(year);
-        info.setID(mFirebaseUser.getUid());//id of the firebase user *****use carefully**
+        info.setStudentOrDoctor(student);
+        info.setID(mFirebaseUser.getUid());//id of the firebase user *****use carefully*****
+
+        //user firebase profile
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+
+        mFirebaseUser.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "User profile updated.");
+                        }
+                    }
+                });
     }
+
+
 
 }
