@@ -13,8 +13,8 @@
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+</android.support.v7.widget.Toolbar>
         <ImageButton
             android:id="@+id/subject"
             android:layout_width="100dp"
@@ -24,7 +24,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/subject"
             android:contentDescription="@string/todo"
-            android:onClick="toSubject"
+            android:onClick="toActivity"
             />
 
         <TextView
@@ -47,7 +47,7 @@
             android:layout_alignParentEnd="true"
             android:background="@drawable/chat"
             android:contentDescription="@string/todo"
-            android:onClick="toChat"/>
+            android:onClick="toActivity"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
             android:layout_below="@+id/subject"
             android:background="@drawable/att"
             android:contentDescription="@string/todo"
-            android:onClick="toAttendance"/>
+            android:onClick="toActivity"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
             android:layout_below="@+id/chat"
             android:background="@drawable/table"
             android:contentDescription="@string/todo"
-            android:onClick="toTable"/>
+            android:onClick="toActivity"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -122,7 +122,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/grade"
             android:contentDescription="@string/todo"
-            android:onClick="toGrades"/>
+            android:onClick="toActivity"/>
 
         <TextView
             android:id="@+id/textView"

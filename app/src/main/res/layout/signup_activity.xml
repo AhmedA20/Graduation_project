@@ -97,14 +97,24 @@
         android:layout_marginTop="10dp"
         android:ems="15"
         android:hint="@string/department"
-        android:inputType="text"
+        android:inputType="text" />
 
-        />
+    <EditText
+        android:id="@+id/sub_dep"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/dep"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:ems="15"
+        android:hint="@string/sub_department"
+        android:inputType="text"/>
 
     <RadioGroup
+            android:id="@+id/rad"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dep"
+            android:layout_below="@id/sub_dep"
             android:layout_centerHorizontal="true"
             android:orientation="horizontal">
 
@@ -127,7 +137,7 @@
             android:id="@+id/submit"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/dep"
+            android:layout_below="@id/rad"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="45dp"
             android:background="@drawable/rounded_button"
@@ -135,7 +145,7 @@
             android:text="@string/sign_up"
             android:textColor="#FFF"
             android:textSize="20sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"/>
 
 
 </RelativeLayout>

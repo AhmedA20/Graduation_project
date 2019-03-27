@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
         <ImageButton
             android:id="@+id/subject"
@@ -14,6 +24,7 @@
             android:layout_marginTop="50dp"
             android:background="@drawable/subject"
             android:contentDescription="@string/todo"
+            android:onClick="toActivity"
             />
 
         <TextView
@@ -35,7 +46,8 @@
             android:layout_marginTop="50dp"
             android:layout_alignParentEnd="true"
             android:background="@drawable/chat"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:onClick="toActivity"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +71,8 @@
             android:layout_marginTop="50dp"
             android:layout_below="@+id/subject"
             android:background="@drawable/att"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:onClick="toActivity"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -82,7 +95,8 @@
             android:layout_marginTop="50dp"
             android:layout_below="@+id/chat"
             android:background="@drawable/table"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:onClick="toActivity"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -107,7 +121,8 @@
             android:layout_marginBottom="350dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/grade"
-            android:contentDescription="@string/todo" />
+            android:contentDescription="@string/todo"
+            android:onClick="toActivity"/>
 
         <TextView
             android:id="@+id/textView"
